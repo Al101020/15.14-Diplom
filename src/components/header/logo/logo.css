@@ -1,0 +1,14 @@
+.logo {
+  position: relative;
+
+  /* z-index: 1; */
+  /* width: 5rem; *//* было в примере */
+  /* color: blue; *//* было в примере */
+
+  /* border: 1px solid black; */
+  /* background: rgba(0, 0, 0, 0.9); */
+}
+
+.logo:hover {
+  cursor: pointer;/* было в примере */
+}
