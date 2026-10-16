@@ -1,20 +1,58 @@
+/* about-us - О нас */
 .about-us {
-  border: 1px solid black;
-  margin: 10px 0;
+  margin: 0 0;
   padding: 15px 35px;
 }
 
+.orangeLine {
+  background-color: orange;
+  width: 5px;
+  min-height: 5px;
+  margin-right: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+/* how-it-works - как это работает */
+  /* border: none; */
+  /* Убирает границу */
+  /* border-radius: 3px;  */
+  /* Скругление углов */
+/**/
 .how-it-works {
   display: flex;
+  margin: 0 0;
+  padding: 15px 35px;
+  height: 250px;
 
-  border: 1px solid black;
-  margin: 10px 0;
-  padding: 15px;
+  background-image: url('../../assets/banner-description.png');
+  background-color: #ffa800;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
 }
 
-.how-it-works button {
+.how-it-works button {  /* background: ; */
+  background: rgba(0, 0, 0, 0.0);
   margin-left: 150px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 3px; /* Скругление углов */
 }
+.how-it-works button:hover {  /* background: ; */
+  background-color: #ffa800;
+  margin-left: 150px;
+  height: 30px;
+  /* border: 2px solid white; */
+  border-radius: 3px; /* Скругление углов */
+}
+
+
 
 .feedback {
   border: 1px solid black;

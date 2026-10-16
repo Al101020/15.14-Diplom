@@ -2,6 +2,8 @@
   /* margin-top: 1px; */
   /* border: 1px solid black; */
   /* padding: 0.5rem 16.12rem 0.5rem; */
+  /* padding: 1rem 5rem; */
+  padding: 10px 100px;
   background: #292929;
 
   text-align: right;
@@ -20,7 +22,7 @@
   font-weight: 300;
   color: #fff;
   cursor: pointer;
-  padding: 25px 15px;
+  padding: 0px 0px;
 }
 
 ul {
@@ -33,7 +35,7 @@ ul {
 
 li {
   display: inline-block;
-  margin-right: 10px; /* Пространство между элементами */
+  margin-right: 5rem; /* Пространство между элементами */
   /* Другие стили: ширина, border, padding и т.д. */
 }
 

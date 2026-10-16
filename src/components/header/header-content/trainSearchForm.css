@@ -7,4 +7,36 @@
   border: 1px solid black;
   padding: 5px;
   margin: 5px;
+
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+
+  padding: 10px 5px;
+
+  text-align: center;
+}
+
+.form-search input {
+  margin-top: 10px;
+}
+
+.fields-of-directions, .dates-of-the-directions, .btn_search-form {
+  margin-top: 20px;
+}
+
+.btn_search-form {
+  background-color: gold;
+
+  border: none; /* Убирает границу */
+  border-radius: 3px; /* Скругление углов */
+
+  padding: 5px;
+}
+.btn_search-form:hover {
+  background-color: orange;
+
+  border: none; /* Убирает границу */
+  border-radius: 3px; /* Скругление углов */
+
+  padding: 5px;
 }

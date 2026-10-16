@@ -1,13 +1,22 @@
 .logo {
   position: relative;
+  /* padding: 1.25rem 16.125rem 0.8125rem; */
+  /* padding: 1.2rem 5rem;  0.8rem */
+  padding: 10px 100px;
+  /* width: 5rem; */
 
   /* z-index: 1; */
   /* width: 5rem; *//* было в примере */
   /* color: blue; *//* было в примере */
 
   /* border: 1px solid black; */
-  /* background: rgba(0, 0, 0, 0.9); */
+  background: rgba(0, 0, 0, 0.3);
 }
+
+/* .header-home__top-container {
+  position: relative;
+  padding: 1.25rem 16.125rem 0.8125rem;
+} */
 
 .logo:hover {
   cursor: pointer;/* было в примере */

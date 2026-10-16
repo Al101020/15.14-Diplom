@@ -1,3 +1,5 @@
+// import './HowItWorks';
+
 const HowItWorks = () => {
   const btnClick = (e) => {
     console.log(e.target);
@@ -5,7 +7,7 @@ const HowItWorks = () => {
   return (
     <div className='how-it-works'>
       <p>Как это работает</p>
-      <button onClick={btnClick}>Узнать больше</button>
+      <button onClick={btnClick} id='btnLearnMore'>Узнать больше</button>
     </div>);
 };
 
