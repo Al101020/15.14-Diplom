@@ -1,11 +1,17 @@
+import './footer.css';
+import Contacts from './Contacts/Contacts';
+import Subscription from './Subscription/Subscription';
+
 const Footer = () => {
-  const btnClick = (e) => {
-    console.log(e.target);
-  }
+  // const btnClick = (e) => {
+  //   console.log(e.target);
+  // }
   return (
     <div className='footer'>
-      <p>Footer</p>
-    </div>);
-};
+      <Contacts />
+      <Subscription />
+    </div>
+  );
+}
 
 export default Footer;

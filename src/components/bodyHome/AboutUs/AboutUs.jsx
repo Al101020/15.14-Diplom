@@ -3,7 +3,7 @@
 const AboutUs = () => {
   return (
     <div className='about-us'>
-      <h1>О нас</h1>
+      <h3>О нас</h3>
       <div className='flex'>
         <div className='orangeLine'></div>
         <div>

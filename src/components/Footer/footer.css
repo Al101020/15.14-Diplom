@@ -1,0 +1,20 @@
+.footer {
+  background-color: black;
+  color: white;
+
+  display: flex;
+}
+
+/* .footer {
+  border: 1px solid green;
+  background-color: white;
+  color: black;
+  
+  
+} */
+
+.footer__Contacts {
+  /* border: 1px solid green; */
+  width: 250px;
+  padding: 0 0 0 0;
+}
