@@ -59,13 +59,17 @@
 }
 
 .description__how-it-works {
-  width: 700px; /* Обязательно укажите ширину */
+ /* width: 700px;  Обязательно укажите ширину */
   margin: 0 50px;
   /* padding: 0 100px; */
   display: flex;
   text-align: center;
+  justify-content: center
 }
 
+/* .description__text {
+  width: 140px;
+} */
 
 /* .about-us {
   margin: 0 0;

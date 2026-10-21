@@ -33,21 +33,27 @@ const Contacts = () => {
     },
   ];
 
+  // item.content.split('\n').map((line, lineIndex) => 
+  items.map((item, Index) => {
+    console.log(item);
+    console.log(item.content);
+  });
+
   return (
-    <div className="footer__contacts">
-      <h5 className="footer__contacts__title">Свяжитесь с нами</h5>
-      <ul className="footer__Contacts">
+    <div className="footer-contacts">
+      <h5 className="footer-contacts__title">Свяжитесь с нами</h5>
+      <ul className="footer-contacts__ul">
         {items.map((item, Index) => (
           // console.log(item)
-          <li className="contacts__item" key={Index}>              
+          <li className="footer-contacts__li" key={Index}>              
             <a
               href={item.href}
-              className={`contacts__link contacts__link_${item.title}`}
+              className={`footer-contacts__link footer-contacts__link_${item.title}`}
               title={item.title}
               target={item.target || '_self'}
             ></a>
 
-            <span className="contacts__info">
+            <span className="footer-contacts__info">
               {/* перенос текста на новую строку по каретке (если она есть): */}
               {/* {item.content.split('\n').map((line, lineIndex) => ()} */}
               {item.content.split('\n').map((line, lineIndex) => {
