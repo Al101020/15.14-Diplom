@@ -1,4 +1,5 @@
-// import './Feedback.css';
+// Отзывы
+// import './Feedback.css'; 
 
 import user1 from '../../../assets/user-1.png';
 import user2 from '../../../assets/user-2.png';

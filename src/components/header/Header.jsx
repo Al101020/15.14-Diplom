@@ -1,5 +1,5 @@
 import './header.css';
-import Logo from './logo/Logo';
+import Logo from '../../components/logo/Logo';
 import Menu from './menu/Menu';
 import Header_content from './header-content/Header_content';
 
@@ -7,7 +7,9 @@ import Header_content from './header-content/Header_content';
 const Header = () => {
   return (
     <header className='header'>
-      <Logo />
+      <div className='header-logo'>
+        <Logo />
+      </div>
       <Menu />
       <Header_content />
     </header>

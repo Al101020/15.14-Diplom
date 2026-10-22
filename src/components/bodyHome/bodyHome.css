@@ -38,6 +38,8 @@
 
 .description__header {
   display: flex;
+  align-items: center;
+  justify-content: center;
   /* margin: 0 0; */
   /* padding: 15px 35px; */
   /* height: 250px; */
@@ -45,16 +47,18 @@
 
 .how-it-works button {  /* background: ; */
   background: rgba(0, 0, 0, 0.0);
-  margin-left: 150px;
+  margin-left: auto;
+  padding: 0 40px;
   height: 30px;
   border: 2px solid white;
   border-radius: 3px; /* Скругление углов */
 }
 .how-it-works button:hover {  /* background: ; */
   background-color: #ffa800;
-  margin-left: 150px;
+  margin-left: auto;
+  padding: 0 40px;
   height: 30px;
-  /* border: 2px solid white; */
+  border: 2px solid white;
   border-radius: 3px; /* Скругление углов */
 }
 

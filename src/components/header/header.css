@@ -7,3 +7,11 @@
   background-size: cover;
   background-position: center;
 }
+
+.header-logo {
+  position: relative;
+  padding: 10px 100px;
+  background: rgba(0, 0, 0, 0.3);
+
+  /* padding: 0 100px; */
+}

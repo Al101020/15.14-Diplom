@@ -1,13 +1,3 @@
-
-
-// {/* перенос текста на новую строку по каретке (если она есть): */}
-//             {item.content.split('\n').map((line, lineIndex) => (
-//               <React.Fragment key={lineIndex}>
-//                 {line}
-//                 {lineIndex !== item.content.split('\n').length - 1 && <br />}
-//               </React.Fragment>
-//             ))}
-
 const Contacts = () => {
   const items = [
     {
@@ -33,11 +23,10 @@ const Contacts = () => {
     },
   ];
 
-  // item.content.split('\n').map((line, lineIndex) => 
-  items.map((item, Index) => {
-    console.log(item);
-    console.log(item.content);
-  });
+  // items.map((item, Index) => {
+  //   console.log(item);
+  //   console.log(item.content);
+  // });
 
   return (
     <div className="footer-contacts">
@@ -54,10 +43,7 @@ const Contacts = () => {
             ></a>
 
             <span className="footer-contacts__info">
-              {/* перенос текста на новую строку по каретке (если она есть): */}
-              {/* {item.content.split('\n').map((line, lineIndex) => ()} */}
-              {item.content.split('\n').map((line, lineIndex) => {
-                console.log(line);
+              {item.content.split('\n').map((line, lineIndex) => {// console.log(line);
                 return(
                   <div key={lineIndex}>
                     {line}
@@ -65,55 +51,12 @@ const Contacts = () => {
                   </div>
                 );
               })}
-              {/* {item.content.split('\n').map((line, lineIndex) => (
-                <React.Fragment key={lineIndex}>
-                  {line}
-                  {lineIndex !== item.content.split('\n').length - 1 && <br />}
-                </React.Fragment>
-              ))} */}
-              </span>
-            </li>
-          ))}
-        </ul>
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 export default Contacts;
-
-
-
-  // return (
-  //   <ul className="contacts">
-  //     {items.map((item, itemIndex) => (
-  //       <li className="contacts__item" key={itemIndex}>
-  //         <a
-  //           href={item.href}
-  //           className={`contacts__link contacts__link_${item.title}`}
-  //           title={item.title}
-  //           target={item.target || '_self'}
-  //         ></a>
-
-          // <span className="contacts__info">
-          //   {/* перенос текста на новую строку по каретке (если она есть): */}
-          //   {item.content.split('\n').map((line, lineIndex) => (
-          //     <React.Fragment key={lineIndex}>
-          //       {line}
-          //       {lineIndex !== item.content.split('\n').length - 1 && <br />}
-          //     </React.Fragment>
-          //   ))}
-          // </span>
-  //       </li>
-  //     ))}
-  //   </ul>
-  // );
-
-
-
-//   {/* Маппим по массиву, создавая для каждой строки соответствующий элемент */}
-// lines.map((line, lineIndex) => {
-//   // Возвращаем элемент: строку, а после неё — тег <br />, если это не последняя строка
-//   return <div key={lineIndex}>
-//     {line}
-//     {lineIndex !== lines.length - 1 && <br />}
-//   </div>;

@@ -1,8 +1,12 @@
 import SubscriptionSocials from './SubscriptionSocials';
 
 const Subscription = () => {
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(event.target);
+    const email = event.target.querySelector('.footer-subscription__form__input').value;
+    console.log(email);
 
     const modalContent = {
       type: 'warning',
@@ -10,8 +14,11 @@ const Subscription = () => {
       text: 'Пожалуйста, перейдите по ней для подтверждения подписки.',
     };
 
-    dispatch(openModal(modalContent)); // открываем модалочку
-    setEmail(''); // очищаем форму
+    
+
+    // dispatch(openModal(modalContent)); // открываем модалочку
+    // setEmail(''); // очищаем форму
+    event.target.querySelector('.footer-subscription__form__input').value = '';
   };
 
   return (

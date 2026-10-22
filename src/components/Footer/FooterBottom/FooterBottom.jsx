@@ -1,9 +1,21 @@
+import Logo from '../../../components/logo/Logo';
+
 const FooterBottom = () => {
 
+  const toTheTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className='footer__bottom'>
-      <div>FooterBottom - низ</div>
-    </div>
+    <>
+      <Logo />
+      <p
+          className='footer__to-the-top'
+          title="к началу страницы"
+          onClick={toTheTop}
+        ></p>
+      <p className='copyrights'>2026 Мельников А.В.</p>
+    </>
   );
 };
 
