@@ -30,7 +30,7 @@ const Contacts = () => {
 
   return (
     <div className="footer-contacts">
-      <h5 className="footer-contacts__title">Свяжитесь с нами</h5>
+      <h5 className="footer-contacts__title" id='footer-contacts__title'>Свяжитесь с нами</h5>
       <ul className="footer-contacts__ul">
         {items.map((item, Index) => (
           // console.log(item)

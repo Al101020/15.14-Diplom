@@ -3,7 +3,8 @@ import Logo from '../../../components/logo/Logo';
 const FooterBottom = () => {
 
   const toTheTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // window.scrollTo({ top: 0, behavior: "smooth" });
+    window.location.href='#top';
   };
 
   return (

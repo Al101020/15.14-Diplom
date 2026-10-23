@@ -2,3 +2,12 @@
   background-color: black;
   color: white,
 } */
+.review__button {
+  margin-top: 12px;
+}
+
+.review__button button {
+  padding: 6px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+}
