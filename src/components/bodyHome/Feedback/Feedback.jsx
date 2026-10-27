@@ -36,18 +36,29 @@ const Feedback = () => {
   ]);
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log(FeedbacksList[index_N]); // Выводим элемент
-      index_N = (index_N + 1) % FeedbacksList.length;
-    }, 3000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     console.log(FeedbacksList[index_N]); // Выводим элемент
+  //     index_N = (index_N + 1) % FeedbacksList.length;
+  //   }, 3000);
 
-    return () => clearInterval(interval);
-  },);
+  //   return () => clearInterval(interval);
+  // },);
   
+  const divFeedbacks = document.querySelector(['.feedbacks-div']);
+  console.log(divFeedbacks);
+
+  // useEffect(() => {}, [theReviewsShown]);
+
+  // useEffect(() => {const interval = setInterval(() => {const interval = setInterval(() => {
+
+  // })})}, 3000);
+
   return (
     <div className='feedback'>
       <h3>Отзывы</h3>
+      <div className='feedback-useEffect'></div>
+      <div id='feedbacks-div'></div>
       <ul className='feedbacks__visible'>
         {theReviewsShown.map((Feedback, idF) => (
           <li className='feedbacks__li' key={idF}>
