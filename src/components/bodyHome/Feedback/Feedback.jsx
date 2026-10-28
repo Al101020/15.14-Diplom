@@ -1,4 +1,3 @@
-// Отзывы
 import { useEffect, useState } from 'react';
 
 import user1 from '../../../assets/user-1.png';
@@ -40,16 +39,14 @@ const Feedback = () => {
     if (FeedbacksList.length === 0) return; // - на всякий случай
     
     if (i < FeedbacksList.length - 1) { // если i < 3
-      currentIndex = i;
-      console.log(currentIndex);
+      currentIndex = i;      // console.log(currentIndex);
 
       setTheReviewsShown([
         FeedbacksList[currentIndex],
         FeedbacksList[currentIndex + 1],
       ]);
     } else if (i <= FeedbacksList.length - 1) { // если i <= 3
-      currentIndex = i;
-      console.log(currentIndex);
+      currentIndex = i;      // console.log(currentIndex);
 
       setTheReviewsShown([
         FeedbacksList[currentIndex],
@@ -57,8 +54,7 @@ const Feedback = () => {
       ]);
     } else if (i >= FeedbacksList.length) { // если i >= 4
       i = 0
-      currentIndex = i;
-      console.log(currentIndex);
+      currentIndex = i;      // console.log(currentIndex);
 
       setTheReviewsShown([
         FeedbacksList[currentIndex],
@@ -74,19 +70,20 @@ const Feedback = () => {
       
       showReview(currentIndex);
     }, 5000); // Интервал 5 секунды
-
-  // Очистка при размонтировании
-  return () => clearInterval(interval);
+    // Очистка при размонтировании
+    return () => clearInterval(interval);
   }, []);
+
+  // console.log([...Array(5)]);
 
   return (
     <div className='feedback'>
       <h3>Отзывы</h3>
-      <div className='feedback-useEffect'></div>
+      {/* <div className='feedback-useEffect'></div> */}
       <div className='feedbacks__visible' id='feedbacks-div'>
         {theReviewsShown.map((Feedback, idF) => (
-          <div className='feedbacks__item' key={idF}>
-            <img src={Feedback.src} />
+          <div className='feedbacks-item' key={idF}>
+            <img src={Feedback.src} className='feedbacks-item-img' />
             <div>
               <div>{Feedback.user}</div>
               <div>{Feedback.text}</div>
@@ -94,17 +91,9 @@ const Feedback = () => {
           </div>
         ))}
       </div>
-      {/* <ul className='feedbacks__visible'>
-        {theReviewsShown.map((Feedback, idF) => (
-          <li className='feedbacks__li' key={idF}>
-            <img src={Feedback.src} />
-            <div>
-              <div>{Feedback.user}</div>
-              <div>{Feedback.text}</div>
-            </div>
-          </li>
-        ))}
-      </ul> */}
+      <div className='feedbacks-points'>
+        {[...Array(5)].map((point, idP) => (<div className='feedbacks-point' key={idP}></div>))}
+      </div>
     </div>
   );
 };

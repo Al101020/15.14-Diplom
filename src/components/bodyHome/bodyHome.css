@@ -73,14 +73,20 @@
   justify-content: space-between; /* Крайние блоки прижимаются к краям, 
   остальные распределяются равномерно */
 }
-
-.feedbacks__item {
-  width: 45%;
+.feedbacks-item {
+  display: flex;
+  width: 40%;
 }
 
+.feedbacks-item-img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+}
 
-.parent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Крайние блоки прижимаются к краям, остальные распределяются равномерно */
+.feedbacks-point {
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  border-radius: 3px; /* Скругление углов */
 }
