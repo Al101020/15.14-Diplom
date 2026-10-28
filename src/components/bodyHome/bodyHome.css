@@ -16,23 +16,14 @@
 }
 
 /* how-it-works - как это работает */
-  /* border: none; */
-  /* Убирает границу */
-  /* border-radius: 3px;  */
-  /* Скругление углов */
-/**/
 .how-it-works {
-  
-  /* margin: 0 0; */
   padding: 15px 35px;
-  height: 250px;
-
+  height: 270px;
   background-image: url('../../assets/banner-description.png');
   background-color: #ffa800;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   color: white;
 }
 
@@ -40,12 +31,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin: 0 0; */
-  /* padding: 15px 35px; */
-  /* height: 250px; */
 }
 
-.how-it-works button {  /* background: ; */
+.how-it-works button {
   background: rgba(0, 0, 0, 0.0);
   margin-left: auto;
   padding: 0 40px;
@@ -53,7 +41,7 @@
   border: 2px solid white;
   border-radius: 3px; /* Скругление углов */
 }
-.how-it-works button:hover {  /* background: ; */
+.how-it-works button:hover {
   background-color: #ffa800;
   margin-left: auto;
   padding: 0 40px;
@@ -63,31 +51,16 @@
 }
 
 .description__how-it-works {
- /* width: 700px;  Обязательно укажите ширину */
   margin: 0 50px;
-  /* padding: 0 100px; */
   display: flex;
   text-align: center;
   justify-content: center
 }
 
-/* .description__text {
-  width: 140px;
-} */
-
-/* .about-us {
-  margin: 0 0;
-  padding: 15px 35px;
-} */
+/* feedback - отзывы */
 .feedback {
-  /* border: 1px solid black;
-  margin: 10px 0;
-  padding: 15px; */
-
   margin: 0 0;
   padding: 15px 35px;
-
-  
 }
 
 .p {
@@ -96,12 +69,18 @@
 
 .feedbacks__visible {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Крайние блоки прижимаются к краям, 
+  остальные распределяются равномерно */
 }
 
-/* ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.feedbacks__item {
+  width: 45%;
+}
 
+
+.parent {
   display: flex;
-} */
+  flex-wrap: wrap;
+  justify-content: space-between; /* Крайние блоки прижимаются к краям, остальные распределяются равномерно */
+}

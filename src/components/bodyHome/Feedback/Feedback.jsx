@@ -27,7 +27,7 @@ const FeedbacksList = [
   },
 ]
 
-let index_N = 0;
+let currentIndex = 0;
 
 const Feedback = () => {
   const [theReviewsShown, setTheReviewsShown] = useState([
@@ -35,31 +35,66 @@ const Feedback = () => {
     FeedbacksList[1],
   ]);
 
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     console.log(FeedbacksList[index_N]); // Выводим элемент
-  //     index_N = (index_N + 1) % FeedbacksList.length;
-  //   }, 3000);
-
-  //   return () => clearInterval(interval);
-  // },);
   
-  const divFeedbacks = document.querySelector(['.feedbacks-div']);
-  console.log(divFeedbacks);
+  function showReview(i) {
+    if (FeedbacksList.length === 0) return; // - на всякий случай
+    
+    if (i < FeedbacksList.length - 1) { // если i < 3
+      currentIndex = i;
+      console.log(currentIndex);
 
-  // useEffect(() => {}, [theReviewsShown]);
+      setTheReviewsShown([
+        FeedbacksList[currentIndex],
+        FeedbacksList[currentIndex + 1],
+      ]);
+    } else if (i <= FeedbacksList.length - 1) { // если i <= 3
+      currentIndex = i;
+      console.log(currentIndex);
 
-  // useEffect(() => {const interval = setInterval(() => {const interval = setInterval(() => {
+      setTheReviewsShown([
+        FeedbacksList[currentIndex],
+        FeedbacksList[0],
+      ]);
+    } else if (i >= FeedbacksList.length) { // если i >= 4
+      i = 0
+      currentIndex = i;
+      console.log(currentIndex);
 
-  // })})}, 3000);
+      setTheReviewsShown([
+        FeedbacksList[currentIndex],
+        FeedbacksList[currentIndex + 1],
+      ]);
+    };
+    
+    currentIndex = i + 1;
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      
+      showReview(currentIndex);
+    }, 5000); // Интервал 5 секунды
+
+  // Очистка при размонтировании
+  return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className='feedback'>
       <h3>Отзывы</h3>
       <div className='feedback-useEffect'></div>
-      <div id='feedbacks-div'></div>
-      <ul className='feedbacks__visible'>
+      <div className='feedbacks__visible' id='feedbacks-div'>
+        {theReviewsShown.map((Feedback, idF) => (
+          <div className='feedbacks__item' key={idF}>
+            <img src={Feedback.src} />
+            <div>
+              <div>{Feedback.user}</div>
+              <div>{Feedback.text}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* <ul className='feedbacks__visible'>
         {theReviewsShown.map((Feedback, idF) => (
           <li className='feedbacks__li' key={idF}>
             <img src={Feedback.src} />
@@ -69,7 +104,7 @@ const Feedback = () => {
             </div>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
