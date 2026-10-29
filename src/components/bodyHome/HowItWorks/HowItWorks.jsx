@@ -1,10 +1,9 @@
-// import './HowItWorks';
 import computer from '../../../assets/computer.svg';
 import earth from '../../../assets/earth.svg';
 import office from '../../../assets/office.svg';
 
 const HowItWorks = () => {
-  const items = [// Section Description
+  const items = [
     { src: computer, alt: 'Удобно', text: 'Удобный заказ на сайте' },
     { src: office, alt: 'Удаленно', text: 'Нет необходимости ехать в офис' },
     { src: earth, alt: 'Выбор', text: 'Огромный выбор направлений' },

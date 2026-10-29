@@ -24,6 +24,11 @@ const FeedbacksList = [
     text: 'СМС-сопровождение до посадки Сразу после оплаты ж/д билетов и за 3 часа до отправления мы пришлем вам СМС-напоминание о поездке.',
     src: user2
   },
+  {
+    user: 'Ещё один - 3', 
+    text: 'СМС-сопровождение до посадки Сразу после оплаты ж/д билетов и за 3 часа до отправления мы пришлем вам СМС-напоминание о поездке.',
+    src: user1
+  },
 ]
 
 let currentIndex = 0;
@@ -33,53 +38,45 @@ const Feedback = () => {
     FeedbacksList[0],
     FeedbacksList[1],
   ]);
+  const [activePoint, setActivePoint] = useState(0);
 
-  
   function showReview(i) {
     if (FeedbacksList.length === 0) return; // - на всякий случай
     
-    if (i < FeedbacksList.length - 1) { // если i < 3
-      currentIndex = i;      // console.log(currentIndex);
-
+    if (i < FeedbacksList.length - 1) { // если i < arr.length - 1
+      currentIndex = i;
       setTheReviewsShown([
         FeedbacksList[currentIndex],
         FeedbacksList[currentIndex + 1],
       ]);
-    } else if (i <= FeedbacksList.length - 1) { // если i <= 3
-      currentIndex = i;      // console.log(currentIndex);
-
+    } else if (i <= 4) { // если i <= 4
+      currentIndex = i;
       setTheReviewsShown([
         FeedbacksList[currentIndex],
         FeedbacksList[0],
       ]);
-    } else if (i >= FeedbacksList.length) { // если i >= 4
-      i = 0
-      currentIndex = i;      // console.log(currentIndex);
-
+    } else if (i >= 4) { // если i >= 4
+      i = 0               // ограничили показ
+      currentIndex = i;
       setTheReviewsShown([
         FeedbacksList[currentIndex],
         FeedbacksList[currentIndex + 1],
       ]);
     };
-    
+    setActivePoint(currentIndex);
     currentIndex = i + 1;
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      
       showReview(currentIndex);
     }, 5000); // Интервал 5 секунды
-    // Очистка при размонтировании
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Очистка при размонтировании
   }, []);
-
-  // console.log([...Array(5)]);
 
   return (
     <div className='feedback'>
       <h3>Отзывы</h3>
-      {/* <div className='feedback-useEffect'></div> */}
       <div className='feedbacks__visible' id='feedbacks-div'>
         {theReviewsShown.map((Feedback, idF) => (
           <div className='feedbacks-item' key={idF}>
@@ -92,7 +89,13 @@ const Feedback = () => {
         ))}
       </div>
       <div className='feedbacks-points'>
-        {[...Array(5)].map((point, idP) => (<div className='feedbacks-point' key={idP}></div>))}
+        {[...Array(5)].map((point, idP) => (<div
+          className={`feedbacks-point${
+            idP === activePoint ? ' feedbacks-point_active' : ''
+          }`} 
+          key={idP}
+          onClick={() => showReview(idP)}
+        ></div>))}
       </div>
     </div>
   );
