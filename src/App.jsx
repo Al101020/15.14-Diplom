@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 
 import HomePage from './pages/HomePage';
 
 import './App.css';
 
 export const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <Routes>

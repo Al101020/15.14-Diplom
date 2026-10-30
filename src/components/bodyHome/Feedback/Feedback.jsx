@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import user1 from '../../../assets/user-1.png';
 import user2 from '../../../assets/user-2.png';
 
+import Loading from '../../Loading/Loading';
+
 const FeedbacksList = [
   {
     user: 'Екатерина Вальнова', 
@@ -34,11 +36,14 @@ const FeedbacksList = [
 let currentIndex = 0;
 
 const Feedback = () => {
-  const [theReviewsShown, setTheReviewsShown] = useState([
-    FeedbacksList[0],
-    FeedbacksList[1],
-  ]);
+
+  const [theReviewsShown, setTheReviewsShown] = useState([]);
   const [activePoint, setActivePoint] = useState(0);
+  // const [Time, setTime] = useState(0);
+
+  // function showReview() { // showReview(i) 
+  //   console.log('showReview');
+  // };
 
   function showReview(i) {
     if (FeedbacksList.length === 0) return; // - на всякий случай
@@ -66,17 +71,19 @@ const Feedback = () => {
     setActivePoint(currentIndex);
     currentIndex = i + 1;
   }
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
-      showReview(currentIndex);
-    }, 5000); // Интервал 5 секунды
-    return () => clearInterval(interval); // Очистка при размонтировании
+        showReview(currentIndex);
+      }, 5000); // Интервал 5 секунды
+      return () => clearInterval(interval); // Очистка при размонтировании
   }, []);
 
   return (
     <div className='feedback'>
       <h3>Отзывы</h3>
+      {theReviewsShown.length === 0 ? <Loading /> : <></>}
+
       <div className='feedbacks__visible' id='feedbacks-div'>
         {theReviewsShown.map((Feedback, idF) => (
           <div className='feedbacks-item' key={idF}>
@@ -99,6 +106,31 @@ const Feedback = () => {
       </div>
     </div>
   );
+  // return (
+  //   <div className='feedback'>
+  //     <h3>Отзывы</h3>
+  //     <div className='feedbacks__visible' id='feedbacks-div'>
+  //       {theReviewsShown.map((Feedback, idF) => (
+  //         <div className='feedbacks-item' key={idF}>
+  //           <img src={Feedback.src} className='feedbacks-item-img' />
+  //           <div>
+  //             <div>{Feedback.user}</div>
+  //             <div>{Feedback.text}</div>
+  //           </div>
+  //         </div>
+  //       ))}
+  //     </div>
+  //     <div className='feedbacks-points'>
+  //       {[...Array(5)].map((point, idP) => (<div
+  //         className={`feedbacks-point${
+  //           idP === activePoint ? ' feedbacks-point_active' : ''
+  //         }`} 
+  //         key={idP}
+  //         onClick={() => showReview(idP)}
+  //       ></div>))}
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Feedback;

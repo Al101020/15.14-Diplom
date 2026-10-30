@@ -8,11 +8,11 @@ const Subscription = () => {
     const email = event.target.querySelector('.footer-subscription__form__input').value;
     console.log(email);
 
-    const modalContent = {
-      type: 'warning',
-      title: `На указанный Вами email (${email}) было отправлено письмо со ссылкой.`,
-      text: 'Пожалуйста, перейдите по ней для подтверждения подписки.',
-    };
+    // const modalContent = {
+    //   type: 'warning',
+    //   title: `На указанный Вами email (${email}) было отправлено письмо со ссылкой.`,
+    //   text: 'Пожалуйста, перейдите по ней для подтверждения подписки.',
+    // };
 
     
 

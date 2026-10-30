@@ -9,7 +9,7 @@ const HowItWorks = () => {
     { src: earth, alt: 'Выбор', text: 'Огромный выбор направлений' },
   ];
 
-  const btnClick = (e) => {    // console.log(e.target);
+  const btnClick = () => {    // (e) => { console.log(e.target);
     location.href='#footer-contacts__title';
   }
 

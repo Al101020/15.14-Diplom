@@ -1,8 +1,10 @@
-function Loader() {
+import './Loading.css';
+
+function Loading() {
     return (
         <>
             <p className='red'>загрузка...</p>
         </>
     );
 }
-export default Loader;
+export default Loading;

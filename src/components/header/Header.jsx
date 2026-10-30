@@ -5,6 +5,7 @@ import Header_content from './header-content/Header_content';
 
 //header
 const Header = () => {
+  // console.log(store.getState());
   return (
     <header className='header'>
       <div className='header-logo'>
