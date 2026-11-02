@@ -7,10 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import appStore from './app/store';
 
-// store пока пуст
-console.log(appStore.getState());
-
-
 const container = document.getElementById('root');
 
 if (container) {

@@ -1,18 +1,16 @@
-// import { configureStore } from '@reduxjs/toolkit';
-import { combineSlices, configureStore } from "@reduxjs/toolkit"
-// import townsReducer from './townsSlice';
-import townsReducer from '../reducer/townsSlice';
+import { combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
-// const rootReducer = combineSlices(counterSlice, quotesApiSlice, { // Пример из 15.11
-//   products: productReducer,
-//   todos: todosReducer,
-//   users: usersReducer,
-// })
+import townsReducer from '../reducer/townsSlice';
 
 const store = configureStore({
   reducer: {
     towns: townsReducer,
   },
 });
+
+//
+console.log(store.getState());
+//
 
 export default store;
