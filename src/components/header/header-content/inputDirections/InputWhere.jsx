@@ -1,5 +1,4 @@
 const InputWhere = (props) => {
-  // console.log(props.where);
   const setInputWhere__value = props.where;
 
   const handleChangeWhere = (e) => {
