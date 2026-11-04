@@ -10,9 +10,10 @@ const InputWhereFrom = (props) => {
       <input
         id='inputWhereFrom'
         type='text'
-        className='where-form'
+        className='input_directions-form'
         onChange={handleChangeWhereForm}
         placeholder='Откуда'
+        maxLength='25'
       />
     </>
   );

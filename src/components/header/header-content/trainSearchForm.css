@@ -7,12 +7,9 @@
   border: 1px solid black;
   padding: 5px;
   margin: 5px;
-
   background: rgba(0, 0, 0, 0.4);
   color: white;
-
   padding: 10px 5px;
-
   text-align: center;
 }
 
@@ -24,19 +21,19 @@
   margin-top: 20px;
 }
 
+.input_date-form, .input_directions-form {
+  margin: 0 5px;
+}
+
 .btn_search-form {
   background-color: gold;
-
-  border: none; /* Убирает границу */
-  border-radius: 3px; /* Скругление углов */
-
+  border: none;
+  border-radius: 3px;
   padding: 5px;
 }
 .btn_search-form:hover {
   background-color: orange;
-
-  border: none; /* Убирает границу */
-  border-radius: 3px; /* Скругление углов */
-
+  border: none;
+  border-radius: 3px;
   padding: 5px;
 }
