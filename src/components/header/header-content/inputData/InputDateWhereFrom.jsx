@@ -1,19 +1,21 @@
 const InputDateWhereFrom = (props) => {
-    // const setInputWhereFrom__value = props.whereFrom;
+
+  const setInputDateWhereFrom__value = props.DateWhereFrom;
   
-    // const handleChangeWhereForm = (e) => {
-    //   setInputWhereFrom__value(e.target.value);
-    // }
-  
-    return (
-      <>
-        <input
-          id='InputDateWhereFrom' // 'Откуда'
-          type='date'
-          className='input_date-form'
-        />
-      </>
-    );
+  const handleChangeDateWhereForm = (e) => {
+    setInputDateWhereFrom__value(e.target.value);
   }
   
-  export default InputDateWhereFrom;
+  return (
+    <>
+      <input
+        id='InputDateWhereFrom' // 'Откуда'
+        type='date'
+        className='input_date-form'
+        onChange={handleChangeDateWhereForm}
+      />
+    </>
+  );
+}
+  
+export default InputDateWhereFrom;

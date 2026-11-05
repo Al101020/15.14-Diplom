@@ -3,6 +3,7 @@ const InputWhereFrom = (props) => {
 
   const handleChangeWhereForm = (e) => {
     setInputWhereFrom__value(e.target.value);
+    // console.log(props);
   }
 
   return (

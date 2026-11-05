@@ -25,12 +25,14 @@ const TrainSearchForm = () => {
   const [inputDateWhere__value, setInputDateWhere__value] = useState('');
 
   useEffect(() => {
-    console.log(inputWhere__value);
-  }, [inputDateWhere__value]);
+    console.log(inputDateWhereFrom__value);
+  }, [inputDateWhereFrom__value]); 
   
   useEffect(() => {
-    console.log(inputWhereFrom__value);
-  }, [inputDateWhereFrom__value]);
+    console.log(inputDateWhere__value);
+  }, [inputDateWhere__value]);
+  
+  
 
 
   const handleOnSubmit = (e) => {
@@ -50,8 +52,9 @@ const TrainSearchForm = () => {
         </div>
         <div className='dates-of-the-directions'>
           <label className='title-form'>Дата<br />
-            <InputDateWhereFrom DataWhereFrom={setInputDateWhereFrom__value} />
-            <InputDateWhere DataWhere={setInputDateWhere__value} />
+                                           {/* setInputDateWhereFrom__value */}
+            <InputDateWhereFrom DateWhereFrom={setInputDateWhereFrom__value} />
+            <InputDateWhere DateWhere={setInputDateWhere__value} />
           </label>
         </div>
         

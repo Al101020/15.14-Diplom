@@ -1,20 +1,21 @@
 const InputDateWhere = (props) => {
-    const setInputDateWhere__value = props.DataWhere;
-    console.log(setInputDateWhere__value); //
+
+  const setInputDateWhere__value = props.DateWhere;
   
-    const handleChangeDateWhere = (e) => {
-      setInputDateWhere__value(e.target.value);
-    };
+  const handleChangeDateWhere = (e) => {
+    setInputDateWhere__value(e.target.value);
+  };
   
-    return (
-      <>
-        <input
-          id='InputDateWhere' // 'Куда'
-          type='date'
-          className='input_date-form'
-        />
-      </>
-    );
-  }
+  return (
+    <>
+      <input
+        id='InputDateWhere' // 'Куда'
+        type='date'
+        className='input_date-form'
+        onChange={handleChangeDateWhere}
+      />
+    </>
+  );
+}
   
-  export default InputDateWhere;
+export default InputDateWhere;
