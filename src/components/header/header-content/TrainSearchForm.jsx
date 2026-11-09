@@ -13,24 +13,29 @@ const TrainSearchForm = () => {
   const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
   const [inputWhere__value, setInputWhere__value] = useState('');
 
+  // - Работат
+  useEffect(() => {
+    if (inputWhereFrom__value === '' || inputWhereFrom__value.length === 0) {
+      return;
+    }
+    console.log(inputWhereFrom__value);
+  }, [inputWhereFrom__value]);
+
   // useEffect(() => {
   //   console.log(inputWhere__value);
   // }, [inputWhere__value]);
   
-  // useEffect(() => {
-  //   console.log(inputWhereFrom__value);
-  // }, [inputWhereFrom__value]);
-
   const [inputDateWhereFrom__value, setInputDateWhereFrom__value] = useState('');
   const [inputDateWhere__value, setInputDateWhere__value] = useState('');
 
-  useEffect(() => {
-    console.log(inputDateWhereFrom__value);
-  }, [inputDateWhereFrom__value]); 
+  // - Работат
+  // useEffect(() => {
+  //   console.log(inputDateWhereFrom__value);
+  // }, [inputDateWhereFrom__value]); 
   
-  useEffect(() => {
-    console.log(inputDateWhere__value);
-  }, [inputDateWhere__value]);
+  // useEffect(() => {
+  //   console.log(inputDateWhere__value);
+  // }, [inputDateWhere__value]);
   
   
 
@@ -65,6 +70,8 @@ const TrainSearchForm = () => {
     </>
   );
 };
+
+
 
 export default TrainSearchForm;
 
