@@ -1,9 +1,3 @@
-// Пример из задания
-// fetch( 'https://students.netoservices.ru/fe-diplom/routes/cities?name=мос' )
-//     .then( response => response.json())
-//     .then( data => console.log( data ));
-
-
 async function fetchCity(part) {
   try {
     const response = await fetch(`https://students.netoservices.ru/fe-diplom/routes/cities?name=${part}`);

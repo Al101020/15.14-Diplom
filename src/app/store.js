@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-import townsReducer from '../reducer/townsSlice';
+import citiesReducer from '../reducer/citiesSlice';
 
 const store = configureStore({
   reducer: {
-    towns: townsReducer,
+    cities: citiesReducer,
   },
 });
 

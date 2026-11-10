@@ -23,17 +23,11 @@ const Contacts = () => {
     },
   ];
 
-  // items.map((item, Index) => {
-  //   console.log(item);
-  //   console.log(item.content);
-  // });
-
   return (
     <div className="footer-contacts">
       <h5 className="footer-contacts__title" id='footer-contacts__title'>Свяжитесь с нами</h5>
       <ul className="footer-contacts__ul">
-        {items.map((item, Index) => (
-          // console.log(item)
+        {items.map((item, Index) => (          // console.log(item)
           <li className="footer-contacts__li" key={Index}>              
             <a
               href={item.href}

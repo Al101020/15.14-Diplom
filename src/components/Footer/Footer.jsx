@@ -4,9 +4,6 @@ import Subscription from './Subscription/Subscription';
 import FooterBottom from './FooterBottom/FooterBottom';
 
 const Footer = () => {
-  // const btnClick = (e) => {
-  //   console.log(e.target);
-  // }
   return (
     <>
       <div className='footer'>

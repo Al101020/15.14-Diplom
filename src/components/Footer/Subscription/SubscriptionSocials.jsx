@@ -7,7 +7,7 @@ const SubscriptionSocials = () => {
     { id: 5, title: 'twitter', href: 'https://twitter.com' },
   ];
 
-  return ( // footer-subscription__socials // footer-subscription__socials
+  return (
     <div className='footer-subscription-socials'>
       <div>Социальные сети</div>
       <ul className='footer-subscription-socials__ul'>

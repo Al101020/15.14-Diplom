@@ -1,0 +1,17 @@
+.header {
+  /* text-align: center; */
+
+  background-image: url('../../assets/banner-1.png');
+  background-color: #ffa800;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-logo {
+  position: relative;
+  padding: 10px 100px;
+  background: rgba(0, 0, 0, 0.3);
+
+  /* padding: 0 100px; */
+}

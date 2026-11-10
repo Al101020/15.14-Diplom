@@ -8,10 +8,33 @@ import InputDateWhereFrom from './inputData/InputDateWhereFrom';
 
 import './trainSearchForm.css';
 
+
+//
+import { useDispatch, useSelector } from 'react-redux';
+import { clearError, citiesArr } from '../../../reducer/citiesSlice'
+
+import appStore from '../../../app/store'; // не то пальто
+import fetchCity from '../../../api/fetchCity';
+
+
+//
+
+
 const TrainSearchForm = () => {
   
   const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
   const [inputWhere__value, setInputWhere__value] = useState('');
+
+  // Выбираем favorites из стора
+  // const { favorites: favorites } = useSelector((state) => state.moviesObj);
+      // Выбираем нужные части состояния из стора - moviesArr
+  // const { movies: movies, favorites: favorites, isLoading, isError,
+  //   error } = useSelector((state) => state.moviesObj);
+  // const { cities: cities } = useSelector((state) => state.cities);
+  // const { cities: cities } = useSelector((state) => state.cities);
+  const { citiesArr: citiesArr } = useSelector((state) => state.citiesArr);
+
+  const dispatch = useDispatch();
 
   // - Работат
   useEffect(() => {
@@ -19,6 +42,9 @@ const TrainSearchForm = () => {
       return;
     }
     console.log(inputWhereFrom__value);
+    // console.log(appStore.getState());
+    console.log(citiesArr); // cities
+    // console.log(state);
   }, [inputWhereFrom__value]);
 
   // useEffect(() => {
@@ -37,9 +63,6 @@ const TrainSearchForm = () => {
   //   console.log(inputDateWhere__value);
   // }, [inputDateWhere__value]);
   
-  
-
-
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(e.target);
@@ -57,7 +80,6 @@ const TrainSearchForm = () => {
         </div>
         <div className='dates-of-the-directions'>
           <label className='title-form'>Дата<br />
-                                           {/* setInputDateWhereFrom__value */}
             <InputDateWhereFrom DateWhereFrom={setInputDateWhereFrom__value} />
             <InputDateWhere DateWhere={setInputDateWhere__value} />
           </label>
@@ -71,8 +93,4 @@ const TrainSearchForm = () => {
   );
 };
 
-
-
 export default TrainSearchForm;
-
-
