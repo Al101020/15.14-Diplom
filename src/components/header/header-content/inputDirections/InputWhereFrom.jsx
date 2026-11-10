@@ -7,6 +7,7 @@ const InputWhereFrom = (props) => {
   //
   const dispatch = useDispatch();
   //
+
   async function fetchCity(part) {
     try {
       const response = await fetch(`https://students.netoservices.ru/fe-diplom/routes/cities?name=${part}`);
@@ -30,8 +31,9 @@ const InputWhereFrom = (props) => {
 
   const handleChangeWhereForm = (e) => {    // setInputWhereFrom__value(e.target.value);
     // setInputWhereFrom__value(fetchCity(e.target.value));    // console.log(props);
-    const city = fetchCity(e.target.value);
+    // const city = fetchCity(e.target.value);
     // console.log(city);
+    dispatch(fetchCity(e.target.value));
   }
 
   return (

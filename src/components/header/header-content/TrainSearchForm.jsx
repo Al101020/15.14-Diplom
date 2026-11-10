@@ -32,7 +32,8 @@ const TrainSearchForm = () => {
   //   error } = useSelector((state) => state.moviesObj);
   // const { cities: cities } = useSelector((state) => state.cities);
   // const { cities: cities } = useSelector((state) => state.cities);
-  const { citiesArr: citiesArr } = useSelector((state) => state.citiesArr);
+  // const { citiesArr } = useSelector((state) => state.citiesArr);
+  const { cities } = useSelector((state) => state.cities);
 
   const dispatch = useDispatch();
 
@@ -43,8 +44,9 @@ const TrainSearchForm = () => {
     }
     console.log(inputWhereFrom__value);
     // console.log(appStore.getState());
-    console.log(citiesArr); // cities
-    // console.log(state);
+    // console.log(citiesArr); // cities
+    console.log(cities);
+    dispatch(citiesArr);
   }, [inputWhereFrom__value]);
 
   // useEffect(() => {
