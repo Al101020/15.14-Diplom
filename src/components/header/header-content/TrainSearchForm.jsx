@@ -31,11 +31,11 @@ const TrainSearchForm = () => {
   const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
   const [inputWhere__value, setInputWhere__value] = useState('');
 
-  const [choosingCity, setChoosingCity] = useState([]);
+  // const [choosingCity, setChoosingCity] = useState([]);
 
-  useEffect(() => {
-    console.log(choosingCity);
-  }, [choosingCity]);
+  // useEffect(() => {
+  //   console.log(choosingCity);
+  // }, [choosingCity]);
 
 
 

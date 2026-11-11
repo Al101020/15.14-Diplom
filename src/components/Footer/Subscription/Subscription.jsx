@@ -16,9 +16,11 @@ const Subscription = () => {
       <p className='footer-subscription__text'>Будьте в курсе событий</p>
       <form className='footer-subscription__form' onSubmit={handleSubmit}>
         <input
+          id='inputEmail'
           type='email'
           className='footer-subscription__form__input'
           placeholder='e-mail'
+          autocomplete='on'
           required
         />
         <button type='submit' className='footer-subscription__form__btn'>
