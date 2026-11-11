@@ -12,41 +12,50 @@ import './trainSearchForm.css';
 //
 import { useDispatch, useSelector } from 'react-redux';
 import { clearError, citiesArr } from '../../../reducer/citiesSlice'
-
-import appStore from '../../../app/store'; // не то пальто
+// import fetchCity from '../../../api/fetchCity';
 import fetchCity from '../../../api/fetchCity';
-
-
 //
 
 
 const TrainSearchForm = () => {
-  
-  const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
-  const [inputWhere__value, setInputWhere__value] = useState('');
-
-  // Выбираем favorites из стора
-  // const { favorites: favorites } = useSelector((state) => state.moviesObj);
-      // Выбираем нужные части состояния из стора - moviesArr
-  // const { movies: movies, favorites: favorites, isLoading, isError,
-  //   error } = useSelector((state) => state.moviesObj);
-  // const { cities: cities } = useSelector((state) => state.cities);
-  // const { cities: cities } = useSelector((state) => state.cities);
-  // const { citiesArr } = useSelector((state) => state.citiesArr);
-  const { cities } = useSelector((state) => state.cities);
 
   const dispatch = useDispatch();
 
-  // - Работат
+  const { cities } = useSelector((state) => state.cities);
+
   useEffect(() => {
+    console.log(cities);
+  }, [cities]);
+
+
+  const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
+  const [inputWhere__value, setInputWhere__value] = useState('');
+
+  const [choosingCity, setChoosingCity] = useState([]);
+
+  useEffect(() => {
+    console.log(choosingCity);
+  }, [choosingCity]);
+
+
+
+  // - Работат, но dispatch
+  useEffect(() => {
+    
     if (inputWhereFrom__value === '' || inputWhereFrom__value.length === 0) {
       return;
     }
+
     console.log(inputWhereFrom__value);
+
+    // fetchCity(inputWhereFrom__value);
+    // setChoosingCity(fetchCity(inputWhereFrom__value));
+
     // console.log(appStore.getState());
-    // console.log(citiesArr); // cities
-    console.log(cities);
-    dispatch(citiesArr);
+    // console.log(citiesArr); // cities    console.log(cities);
+    // dispatch(citiesArr);
+    // dispatch(citiesArr(inputWhereFrom__value));
+    dispatch(fetchCity(inputWhereFrom__value));
   }, [inputWhereFrom__value]);
 
   // useEffect(() => {
@@ -64,6 +73,13 @@ const TrainSearchForm = () => {
   // useEffect(() => {
   //   console.log(inputDateWhere__value);
   // }, [inputDateWhere__value]);
+
+  //
+  // const stateCities = useSelector((state) => state.cities);
+  // useEffect(() => {
+  //   console.log(stateCities);
+  // }, [stateCities]);
+  //
   
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -75,7 +91,7 @@ const TrainSearchForm = () => {
       <form className='form-search' onSubmit={handleOnSubmit}>
         <div className='fields-of-directions'>
           <label className='title-form'>Направление<br />
-            <InputWhereFrom whereFrom={setInputWhereFrom__value} />
+            <InputWhereFrom setInputWhereFrom={setInputWhereFrom__value} inputWhereFrom={inputWhereFrom__value} />
             <InputWhere where={setInputWhere__value} />
           </label>
 

@@ -1,0 +1,112 @@
+/* orange-line - полоса оранжевая */
+.orange-line {
+  font-size: 1px;
+  background-color: orange;
+  height: 5px;
+}
+
+/* about-us - О нас */
+.about-us {
+  margin: 0 0;
+  padding: 15px 35px;
+}
+
+.orangeLine {
+  background-color: orange;
+  width: 5px;
+  min-height: 5px;
+  margin-right: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+/* how-it-works - как это работает */
+.how-it-works {
+  padding: 15px 35px;
+  height: 270px;
+  background-image: url('../../assets/banner-description.png');
+  background-color: #ffa800;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.description__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-it-works button {
+  background: rgba(0, 0, 0, 0.0);
+  margin-left: auto;
+  padding: 0 40px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 3px; /* Скругление углов */
+}
+.how-it-works button:hover {
+  background-color: #ffa800;
+  margin-left: auto;
+  padding: 0 40px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 3px; /* Скругление углов */
+}
+
+.description__how-it-works {
+  margin: 0 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center
+}
+
+/* feedback - отзывы */
+.feedback {
+  align-items: center;
+  margin: 0 0;
+  padding: 15px 35px;
+}
+
+.p {
+  margin: 0;
+}
+
+.feedbacks__visible {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Крайние блоки прижимаются к краям, 
+  остальные распределяются равномерно */
+}
+.feedbacks-item {
+  display: flex;
+  width: 40%;
+}
+
+.feedbacks-item-img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.feedbacks-points {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.feedbacks-point {
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  border-radius: 50%; /* Скругление углов */
+  margin: 20px 5px;
+  cursor: pointer;
+}
+
+.feedbacks-point_active {
+  background-color: grey;
+}

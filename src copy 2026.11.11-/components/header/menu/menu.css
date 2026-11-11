@@ -1,0 +1,28 @@
+.menu {
+  padding: 10px 100px;
+  background: #292929;
+
+  text-align: right;
+}
+
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-left: 0;
+}
+
+.menu__link {
+  font-family: var(--font-family);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  cursor: pointer;
+  padding: 0px 0px;
+}
+
+li {
+  display: inline-block;
+  margin-right: 5rem; /* Пространство между элементами */
+}
+
