@@ -60,13 +60,13 @@ const TrainSearchForm = () => {
   const [inputDateWhere__value, setInputDateWhere__value] = useState('');
 
   // - Работат
-  // useEffect(() => {
-  //   console.log(inputDateWhereFrom__value);
-  // }, [inputDateWhereFrom__value]); 
+  useEffect(() => {
+    console.log(inputDateWhereFrom__value);
+  }, [inputDateWhereFrom__value]); 
   
-  // useEffect(() => {
-  //   console.log(inputDateWhere__value);
-  // }, [inputDateWhere__value]);
+  useEffect(() => {
+    console.log(inputDateWhere__value);
+  }, [inputDateWhere__value]);
 
   //
   // const stateCities = useSelector((state) => state.cities);

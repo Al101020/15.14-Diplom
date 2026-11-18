@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
 const InputsDirection1 = (props) => {  
   // console.log(props);
 
-  const inputWhereFrom__value = props.inputWhereFrom;
+  // const inputWhereFrom__value = props.inputWhereFrom;
   const setInputWhereFrom__value = props.setInputWhereFrom;
   const cities = props.cities;
 
