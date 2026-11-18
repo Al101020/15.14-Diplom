@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 
 import InputsDirection1 from './inputsDirections/InputsDirection1';
 import InputsDirection2 from './inputsDirections/InputsDirection2';
-//
-import InputWhere from './inputDirections/InputWhere';
-import InputWhereFrom from './inputDirections/InputWhereFrom';
 
 import InputDateWhere from './inputData/InputDateWhere';
 import InputDateWhereFrom from './inputData/InputDateWhereFrom';
