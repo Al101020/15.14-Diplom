@@ -20,7 +20,7 @@ const Subscription = () => {
           type='email'
           className='footer-subscription__form__input'
           placeholder='e-mail'
-          autocomplete='on'
+          autoComplete='on'
           required
         />
         <button type='submit' className='footer-subscription__form__btn'>
