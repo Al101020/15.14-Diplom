@@ -1,30 +1,24 @@
-// import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect, useState } from 'react'; 
+import Input from './Input/Input';// import InputsDirection from './InputsDirection';
 
-const InputsDirection1 = (props) => {  
-  // console.log(props);
+const InputsDirection1 = (props) => {  // console.log(props);  
 
-  // const inputWhereFrom__value = props.inputWhereFrom;
   const setInputWhereFrom__value = props.setInputWhereFrom;
-  const cities = props.cities;
-
-  // if (cities)
-  console.log(cities);
+  const cities = props.cities;  // console.log(cities);
 
   const handleChangeWhere = (e) => {
     setInputWhereFrom__value(e.target.value);
   };
-  
+
+  const props1 = {
+    id: 'InputDirection1',
+    placeholder: 'От куда',
+    funct: {handleChangeWhere}
+  };
+
   return (
-    <div className='InputDirection'>
-      <input
-        name='InputDirection'
-        id='inputWhereFrom'
-        type='text'
-        className='input_direction'
-        placeholder='От куда'
-        onChange={handleChangeWhere}
-        maxLength='25'
-      />
+    <div className='input-direction' style={{ position: 'relative' }}>
+      <Input props={props1} />
     </div>
   );
 }
@@ -33,31 +27,39 @@ export default InputsDirection1;
 
 
 
-//   import fetchCity from "../../../../api/fetchCity";
-// import { useDispatch, useSelector } from 'react-redux';
-// import { citiesArr } from '../../../../reducer/citiesSlice';
 
-// const InputWhereFrom = (props) => {  // console.log(props);
-//   const inputWhereFrom__value = props.inputWhereFrom;
-//   const setInputWhereFrom__value = props.setInputWhereFrom;
-//   const dispatch = useDispatch();
 
-//   const handleChangeWhereForm = (e) => {
-//     setInputWhereFrom__value(e.target.value);
-//   }
+  // // Tooltip
 
-//   return (
-//     <>
-//       <input
-//         id='inputWhereFrom'
-//         type='text'
-//         className='input_directions-form'
-//         onChange={handleChangeWhereForm}
-//         placeholder='Откуда'
-//         maxLength='25'
-//       />
-//     </>
-//   );
-// }
+  // //Создали состояние: фокус есть или нет
+  // const [onFocus, setOnFocus] = useState(false);
+  // // Показывать подказку или нет
+  // const [onBlur, setOnBlur] = useState(false);
 
-// export default InputWhereFrom;
+  // const handleFocus = () => {
+  //   setOnFocus(true);
+  // };
+
+  // // ??? (false)
+  // const handleBlur = () => {
+  //   setOnBlur(false);
+  // };
+
+  // // Дополнительно: скрыть подсказку по нажатию Esc
+  // const closeTooltip = (event) => {
+  //   if (event.key === 'Escape') {
+  //     setOnBlur(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   // Подписка на события
+  //   document.addEventListener('keydown', closeTooltip);
+  //   return () => {
+  //     // Отписываемся от событий при размонтировании
+  //     document.removeEventListener('keydown', closeTooltip);
+  //   };
+  // }, []);
+
+  
+  //   // Подписка на события Фокус
