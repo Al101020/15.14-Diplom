@@ -1,31 +1,69 @@
-// import { useEffect, useState } from 'react'; 
-import Input from './Input/Input';// import InputsDirection from './InputsDirection';
+import { useEffect, useState } from 'react';// import { useSelector } from 'react-redux';
 
-const InputsDirection1 = (props) => {  // console.log(props);  
+import Input from './Input/Input';
+import Tooltip from './tooltip';
 
+// let parentInp1 = null;
+
+const InputsDirection1 = (props) => {  // console.log(props); 
+  //
+  const [showTooltip, setShowTooltip] = useState(false);
+  //
   const setInputWhereFrom__value = props.setInputWhereFrom;
-  const cities = props.cities;  // console.log(cities);
+  const cities = props.cities;
 
   const handleChangeWhere = (e) => {
     setInputWhereFrom__value(e.target.value);
+    // parentInp1 = e.target.parentElement;
   };
 
   const props1 = {
     id: 'InputDirection1',
     placeholder: 'От куда',
-    funct: {handleChangeWhere}
+    funct: {handleChangeWhere},
+    functShowT: {setShowTooltip},
+  };
+
+  useEffect(() => {
+    // console.log(cities.length);
+    // console.log(parentInp1);
+  }, [cities]);
+
+  useEffect(() => {
+    // console.log(cities);
+    // console.log(parentInp1);
+    // console.log(showTooltip);
+  }, [showTooltip]);
+
+  const onClickA = (e) => {
+    console.log(e.target);
   };
 
   return (
     <div className='input-direction' style={{ position: 'relative' }}>
       <Input props={props1} />
+      { showTooltip && <Tooltip 
+        cities={cities}
+        onClickA={onClickA}
+        // parentInp1={parentInp1}
+      /> }
     </div>
   );
-}
+};
   
 export default InputsDirection1;
 
 
+
+
+{/* <div className='input-direction' style={{ position: 'relative' }}>
+          {cities.map((city, idC) => (
+            <div key={idC}>
+              <a href='#' id={city.id} onClick={onClickA}>{city.name}</a>
+              <div style={{ display: 'none' }}>{city._id}</div>
+            </div>
+          ))}
+        </div> */}
 
 
 

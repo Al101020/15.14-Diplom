@@ -18,7 +18,7 @@ const TrainSearchForm = () => {
   const { cities } = useSelector((state) => state.cities);
 
   useEffect(() => {
-    console.log(cities);
+    // console.log(cities);
   }, [cities]);
 
 
@@ -43,14 +43,14 @@ const TrainSearchForm = () => {
   const [inputDateWhereFrom__value, setInputDateWhereFrom__value] = useState('');
   const [inputDateWhere__value, setInputDateWhere__value] = useState('');
 
-  // - Работат
-  useEffect(() => {
-    console.log(inputDateWhereFrom__value);
-  }, [inputDateWhereFrom__value]); 
+  // // - Работат
+  // useEffect(() => {
+  //   console.log(inputDateWhereFrom__value);
+  // }, [inputDateWhereFrom__value]); 
   
-  useEffect(() => {
-    console.log(inputDateWhere__value);
-  }, [inputDateWhere__value]);
+  // useEffect(() => {
+  //   console.log(inputDateWhere__value);
+  // }, [inputDateWhere__value]);
 
   //
   // const stateCities = useSelector((state) => state.cities);

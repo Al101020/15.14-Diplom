@@ -8,6 +8,8 @@ const InputsDirection2 = (props) => {    // console.log(props);
 
   const handleChangeWhere = (e) => {
     setInputWhere__value(e.target.value);
+    const parentInp2 = e.target.parentElement
+    console.log(parentInp2); // здесь нужно вставлять tooltip
   };
 
   const props2 = {
