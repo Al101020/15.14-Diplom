@@ -24,7 +24,7 @@ function Input(props) {
           autoComplete='off'
 
           onFocus={handleFocus}
-          onBlur={handleBlur}
+          // onBlur={handleBlur}
         />
     </>
   );

@@ -1,10 +1,11 @@
-.tooltip {
+/* .tooltip {
   position: absolute;
-  top: 100%; /* Подсказка появится над элементом */
+  text-transform: uppercase;
+  top: 100%;
   left: 0;
   display: none;
-  background: #333;
-  color: #fff;
+  background: #fff;
+  color: #000000;
   padding: 5px 10px;
   border-radius: 4px;
   white-space: nowrap;
@@ -13,4 +14,21 @@
 
 .tooltip {
   display: block;
+} */
+
+
+.tooltip {
+  position: absolute;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000000;
+
+  /* border-radius: 4px; */
+  white-space: nowrap;
+  z-index: 1000;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
 }

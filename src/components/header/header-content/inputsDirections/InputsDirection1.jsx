@@ -37,6 +37,8 @@ const InputsDirection1 = (props) => {  // console.log(props);
 
   const onClickA = (e) => {
     console.log(e.target);
+    const ul = e.target.closest('.tooltip');
+    console.log(ul);
   };
 
   return (

@@ -16,16 +16,22 @@ const Tooltip = (props) => {
       </>    
     );
   } else if (cities.length > 0 ) {
-    console.log('cities.length > 0 ');
+    // console.log('cities.length > 0 ');
+    console.log(cities);
     return (
-      <>
+      <ul className='tooltip'>
         {cities.map((city, idC) => (
-          <div key={idC}>
-            <a href='#' id={city.id} onClick={onClickA}>{city.name}</a>
+          <li key={idC}>
+            <a href='#' 
+              id={city.id} 
+              onClick={onClickA} 
+              // style={{ position: 'absolute' }} 
+              // className='tooltip'
+              >{city.name}</a>
             <div style={{ display: 'none' }}>{city._id}</div>
-          </div>
+          </li>
         ))}
-      </> 
+      </ul> 
     );
   } else {
     return (
