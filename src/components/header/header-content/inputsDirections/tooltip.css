@@ -1,34 +1,33 @@
-/* .tooltip {
+.tooltip {
   position: absolute;
-  text-transform: uppercase;
-  top: 100%;
-  left: 0;
-  display: none;
-  background: #fff;
-  color: #000000;
-  padding: 5px 10px;
+  width: 150px;
   border-radius: 4px;
   white-space: nowrap;
   z-index: 1000;
-}
-
-.tooltip {
-  display: block;
-} */
-
-
-.tooltip {
-  position: absolute;
-  text-transform: uppercase;
-  background: #fff;
-  color: #000000;
-
-  /* border-radius: 4px; */
-  white-space: nowrap;
-  z-index: 1000;
-
+  background: #e3e3e3;
+  padding: 5px 10px;
+  margin: 5px 0;
+  left: 5px;
   text-align: left;
-
   display: flex;
   flex-direction: column;
+}
+
+.tooltip__info {
+  color: #36613a;
+}
+
+.tooltip__city-name {
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tooltip__city-name:hover {
+  width: 150px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #000000;
+  cursor: pointer;
 }

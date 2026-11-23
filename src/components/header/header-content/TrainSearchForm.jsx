@@ -17,8 +17,7 @@ const TrainSearchForm = () => {
 
   const { cities } = useSelector((state) => state.cities);
 
-  useEffect(() => {
-    // console.log(cities);
+  useEffect(() => {    // console.log(cities);
   }, [cities]);
 
 
@@ -61,7 +60,11 @@ const TrainSearchForm = () => {
   
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const target = e.target;
+    console.log(target);
+    console.log(target.querySelector('.InputDirection1'));
+    console.log(target.querySelectorAll('.input__direction'));
+    // Нужно собрать для запроса все ... (в низу).
   };
 
   return (
@@ -82,12 +85,6 @@ const TrainSearchForm = () => {
               cities={cities}
              />
           </div>
-          {/* <label className='title-form'>Направление<br />
-            <InputWhereFrom setInputWhereFrom={setInputWhereFrom__value} inputWhereFrom={inputWhereFrom__value} />
-            <ChoiceOfCity props={cities} />
-            <InputWhere where={setInputWhere__value} />
-          </label> */}
-
         </div>
         <div className='dates-of-the-directions'>
           <label className='title-form'>Дата<br />
@@ -105,3 +102,14 @@ const TrainSearchForm = () => {
 };
 
 export default TrainSearchForm;
+
+
+
+// Нужно собрать для запроса все данные:
+    // примерный запрос без дат у меня в Postman проходит:
+    // https://students.netoservices.ru/fe-diplom/routes?from_city_id=67ceb6548c75f00047c8f78d&to_city_id=67ceb6548c75f00047c8f78e
+    // У дат формат нужен другой
+    // from_city_id,
+    // to_city_id,
+    // date_start
+    // date_end

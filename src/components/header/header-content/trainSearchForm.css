@@ -46,8 +46,11 @@
   justify-content: center;
 }
 
-.input_direction {
-  justify-content: center;
+.input__direction {
+  /* justify-content: center; */
+  margin: 0 5px;
+  position: relative;
+  text-transform: uppercase;
 }
 
 .changeDirections {
@@ -68,8 +71,3 @@
   justify-content: center;
 }
 
-/* 2026.11.18  */
-.input_direction {
-  margin: 0 5px;
-  position: relative;
-}

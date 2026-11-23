@@ -8,7 +8,10 @@ function Input(props) {
   };
     // Обработчик: скрыть подсказку при потере фокуса
   const handleBlur = () => {
-    functShowT.setShowTooltip(false);    // console.log(showTooltip);
+    setTimeout(() => {
+      functShowT.setShowTooltip(false);
+    }, 100);
+    // functShowT.setShowTooltip(false);    // console.log(showTooltip);
   };
   return (
     <>
@@ -16,7 +19,7 @@ function Input(props) {
           name='InputDirection'
           id={props.props.id}
           type='text'
-          className='input_direction' 
+          // className='input__direction' 
           placeholder={props.props.placeholder}
           onChange={funct}
           maxLength='25'
@@ -24,7 +27,7 @@ function Input(props) {
           autoComplete='off'
 
           onFocus={handleFocus}
-          // onBlur={handleBlur}
+          onBlur={handleBlur}
         />
     </>
   );
