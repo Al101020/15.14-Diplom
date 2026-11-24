@@ -1,18 +1,30 @@
-function Input(props) {   
-  // console.log(props);
+import {  useDispatch, useSelector } from 'react-redux'; // 
+import { reset } from '../../../../../reducer/citiesSlice';
+
+function Input(props) {  // console.log(props);
+
+  const dispatch = useDispatch();
+
+  const { cities } = useSelector((state) => state.cities);
+  console.log(cities);
+
   const funct = props.props.funct.handleChangeWhere;
   const functShowT = props.props.functShowT;//.setShowTooltip  // console.log(functShowT);
+
   // Обработчик: показать подсказку при получении фокуса
   const handleFocus = () => {
     functShowT.setShowTooltip(true);    // console.log(showTooltip);
   };
+
     // Обработчик: скрыть подсказку при потере фокуса
   const handleBlur = () => {
     setTimeout(() => {
       functShowT.setShowTooltip(false);
+      dispatch(reset());      // console.log(cities);
     }, 100);
-    // functShowT.setShowTooltip(false);    // console.log(showTooltip);
+
   };
+
   return (
     <>
       <input

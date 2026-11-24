@@ -60,11 +60,23 @@ const TrainSearchForm = () => {
   
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    const target = e.target;
-    console.log(target);
-    console.log(target.querySelector('.InputDirection1'));
-    console.log(target.querySelectorAll('.input__direction'));
-    // Нужно собрать для запроса все ... (в низу).
+
+     // Нужно собрать для запроса все ... (в низу).
+    const target = e.target;    // console.log(target);
+
+    const inputFrom = target.querySelectorAll('.input__direction')[0].children[0];
+    console.log(inputFrom.value); // инпут Город от
+    console.log(inputFrom.id); // инпут id Города от 
+    // console.log(target.children[0]);
+    const inputTo = target.querySelectorAll('.input__direction')[1].children[0];
+    console.log(inputTo.value); // инпут Город до
+    console.log(inputTo.id); // инпут id Города до 
+
+    // inputs__dates
+    const inputDateFrom = target.querySelectorAll('.input__date');
+    console.log(inputDateFrom); // инпут Город от 
+    // const inputDateTo = target.querySelectorAll('.inputs__dates')[0].children[1];
+    // console.log(inputDateTo); // инпут Город до 
   };
 
   return (
@@ -87,10 +99,11 @@ const TrainSearchForm = () => {
           </div>
         </div>
         <div className='dates-of-the-directions'>
-          <label className='title-form'>Дата<br />
+          <h4 className='title-form'>Дата</h4>
+          <div className='inputs__dates'>
             <InputDateWhereFrom DateWhereFrom={setInputDateWhereFrom__value} />
             <InputDateWhere DateWhere={setInputDateWhere__value} />
-          </label>
+          </div>
         </div>
         
         <button type="submit" className='btn_search-form'>
