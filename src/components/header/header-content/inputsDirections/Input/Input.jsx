@@ -6,7 +6,7 @@ function Input(props) {  // console.log(props);
   const dispatch = useDispatch();
 
   const { cities } = useSelector((state) => state.cities);
-  console.log(cities);
+  // console.log(cities);
 
   const funct = props.props.funct.handleChangeWhere;
   const functShowT = props.props.functShowT;//.setShowTooltip  // console.log(functShowT);
@@ -31,7 +31,7 @@ function Input(props) {  // console.log(props);
           name='InputDirection'
           id={props.props.id}
           type='text'
-          // className='input__direction' 
+          className='input__direction' 
           placeholder={props.props.placeholder}
           onChange={funct}
           maxLength='25'

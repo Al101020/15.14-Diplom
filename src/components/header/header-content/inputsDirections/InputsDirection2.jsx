@@ -31,14 +31,14 @@ const InputsDirection2 = (props) => {
     const idCity = li.children[1].innerHTML;
     const nameCity = e.target.innerHTML;
 
-    const input = e.target.closest('.input__direction').children[0];
+    const input = e.target.closest('.div-input__direction').children[0];
 
     input.id = idCity // id подставили id city --- НЕ ЗАБЫТЬ
     input.value = nameCity;
   };
 
   return (
-    <div className='input__direction' style={{ position: 'relative' }}>
+    <div className='div-input__direction' style={{ position: 'relative' }}>
       <Input props={props2} />
       { showTooltip && <Tooltip 
         cities={cities}

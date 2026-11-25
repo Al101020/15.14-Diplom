@@ -10,6 +10,7 @@ import './trainSearchForm.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import fetchCity from '../../../api/fetchCity';
+import fetchDirection from '../../../api/fetchDirection';
 
 const TrainSearchForm = () => {
 
@@ -17,10 +18,15 @@ const TrainSearchForm = () => {
 
   const { cities } = useSelector((state) => state.cities);
 
-  useEffect(() => {    // console.log(cities);
-  }, [cities]);
+    //
+  const { direction } = useSelector((state) => state.direction);
 
-
+  useEffect(() => {
+    console.log(direction);
+    console.log(direction.items);
+  }, [direction]);
+    //
+    
   const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
   const [inputWhere__value, setInputWhere__value] = useState('');
 
@@ -60,23 +66,26 @@ const TrainSearchForm = () => {
   
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
-     // Нужно собрать для запроса все ... (в низу).
     const target = e.target;    // console.log(target);
+        // Направления
+    const inputFrom = target.querySelectorAll('.div-input__direction')[0].children[0];
+    const inputTo = target.querySelectorAll('.div-input__direction')[1].children[0];
+        // Даты
+    const inputDateFrom = target.querySelectorAll('.input_date-form')[0];
+    const inputDateTo = target.querySelectorAll('.input_date-form')[1];
 
-    const inputFrom = target.querySelectorAll('.input__direction')[0].children[0];
-    console.log(inputFrom.value); // инпут Город от
-    console.log(inputFrom.id); // инпут id Города от 
-    // console.log(target.children[0]);
-    const inputTo = target.querySelectorAll('.input__direction')[1].children[0];
-    console.log(inputTo.value); // инпут Город до
-    console.log(inputTo.id); // инпут id Города до 
+    const objDirection = {
+      nameCityFrom: inputFrom.value,
+      idCityFrom: inputFrom.id,
+      nameCityTo: inputTo.value,
+      idCityTo: inputTo.id,
+      DateFrom: inputDateFrom.value,
+      DateTo: inputDateTo.value,
+    }
 
-    // inputs__dates
-    const inputDateFrom = target.querySelectorAll('.input__date');
-    console.log(inputDateFrom); // инпут Город от 
-    // const inputDateTo = target.querySelectorAll('.inputs__dates')[0].children[1];
-    // console.log(inputDateTo); // инпут Город до 
+    // console.log(objDirection);    // console.log(objDirection.DateTo);
+        // Теперь нужно сделать запрос fetch
+    dispatch(fetchDirection(objDirection));
   };
 
   return (
@@ -115,14 +124,3 @@ const TrainSearchForm = () => {
 };
 
 export default TrainSearchForm;
-
-
-
-// Нужно собрать для запроса все данные:
-    // примерный запрос без дат у меня в Postman проходит:
-    // https://students.netoservices.ru/fe-diplom/routes?from_city_id=67ceb6548c75f00047c8f78d&to_city_id=67ceb6548c75f00047c8f78e
-    // У дат формат нужен другой
-    // from_city_id,
-    // to_city_id,
-    // date_start
-    // date_end

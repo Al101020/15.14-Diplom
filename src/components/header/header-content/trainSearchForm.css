@@ -46,10 +46,16 @@
   justify-content: center;
 }
 
-.input__direction {
+.div-input__direction {
   /* justify-content: center; */
-  margin: 0 5px;
+  /* margin: 0 5px; */
   position: relative;
+  /* text-transform: uppercase; */
+}
+
+.input__direction {
+  margin: 0 5px;
+  /* position: relative; */
   text-transform: uppercase;
 }
 
