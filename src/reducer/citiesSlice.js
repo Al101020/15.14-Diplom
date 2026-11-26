@@ -20,7 +20,7 @@ const citiesSlice = createSlice({
       state.cities = action.payload;
       console.log(action.payload);
     },
-    reset: () => initialState,
+    citiesReset: () => initialState,
   },
   extraReducers: (builder) => {
     builder
@@ -49,5 +49,5 @@ const citiesSlice = createSlice({
   },
 });
 
-export const { clearError, citiesArr, reset } = citiesSlice.actions;
+export const { clearError, citiesArr, citiesReset } = citiesSlice.actions;
 export default citiesSlice.reducer;

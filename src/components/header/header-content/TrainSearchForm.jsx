@@ -1,4 +1,7 @@
+import './trainSearchForm.css';
+
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import InputsDirection1 from './inputsDirections/InputsDirection1';
 import InputsDirection2 from './inputsDirections/InputsDirection2';
@@ -6,31 +9,41 @@ import InputsDirection2 from './inputsDirections/InputsDirection2';
 import InputDateWhere from './inputData/InputDateWhere';
 import InputDateWhereFrom from './inputData/InputDateWhereFrom';
 
-import './trainSearchForm.css';
-
-import { useDispatch, useSelector } from 'react-redux';
 import fetchCity from '../../../api/fetchCity';
 import fetchDirection from '../../../api/fetchDirection';
 
 const TrainSearchForm = () => {
+  const { cities } = useSelector((state) => state.cities);  // console.log(cities);
+  const { direction } = useSelector((state) => state.direction);
+  const { objCity1 } = useSelector((state) => state.objCity1);  // console.log(city1); // undefined
 
   const dispatch = useDispatch();
 
-  const { cities } = useSelector((state) => state.cities);
-
-    //
-  const { direction } = useSelector((state) => state.direction);
-
-  useEffect(() => {
-    console.log(direction);
-    console.log(direction.items);
-  }, [direction]);
-    //
-    
+  // Инпуты
   const [inputWhereFrom__value, setInputWhereFrom__value] = useState('');
   const [inputWhere__value, setInputWhere__value] = useState('');
+  
+  // Объект выбраного города
+  // const {city1} = useSelector((state) => state.cities);
+  // console.log(city1);
+  
+  // - objCity1 
+  useEffect(() => {
+    console.log(objCity1);
+    if (!objCity1 === null ) {
+      console.log(objCity1);
+    }    
+  }, [objCity1]);
 
-  // - Работат
+  // - direction
+  useEffect(() => {
+    // console.log(direction);
+    if (direction.items) {
+      console.log(direction.items);
+    }
+  }, [direction]);
+
+  // inputWhere__value - Работат
   useEffect(() => {
     if (inputWhereFrom__value === '' || inputWhereFrom__value.length === 0) {
       return;
@@ -44,6 +57,8 @@ const TrainSearchForm = () => {
     }    
     dispatch(fetchCity(inputWhere__value));
   }, [inputWhere__value]);
+
+  
   
   const [inputDateWhereFrom__value, setInputDateWhereFrom__value] = useState('');
   const [inputDateWhere__value, setInputDateWhere__value] = useState('');
@@ -98,6 +113,9 @@ const TrainSearchForm = () => {
               setInputWhereFrom={setInputWhereFrom__value} 
               inputWhereFrom={inputWhereFrom__value}
               cities={cities}
+
+              // objCity1={objCity1}
+              // setObjCity1={setObjCity1}
              />
             {/* <div className='changeDirections'></div> */}
             <InputsDirection2 

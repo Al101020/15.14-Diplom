@@ -1,5 +1,5 @@
 import {  useDispatch, useSelector } from 'react-redux'; // 
-import { reset } from '../../../../../reducer/citiesSlice';
+import { citiesReset } from '../../../../../reducer/citiesSlice';
 
 function Input(props) {  // console.log(props);
 
@@ -20,7 +20,7 @@ function Input(props) {  // console.log(props);
   const handleBlur = () => {
     setTimeout(() => {
       functShowT.setShowTooltip(false);
-      dispatch(reset());      // console.log(cities);
+      dispatch(citiesReset());      // console.log(cities);
     }, 100);
 
   };

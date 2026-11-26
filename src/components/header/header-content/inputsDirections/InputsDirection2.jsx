@@ -26,6 +26,7 @@ const InputsDirection2 = (props) => {
   }, [showTooltip]);
 
   const onClickA = (e) => {
+    console.log(e.target);
 
     const li = e.target.parentElement;
     const idCity = li.children[1].innerHTML;

@@ -7,6 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import appStore from './app/store';
 
+// console.log(appStore); // фигня
+appStore.getState();
+
 const container = document.getElementById('root');
 
 if (container) {
@@ -26,3 +29,5 @@ if (container) {
     "Root element with ID 'root' was not found in the document. Ensure there is a corresponding HTML element with the ID 'root' in your HTML file.",
   )
 };
+
+
