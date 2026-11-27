@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
+import {  useDispatch } from 'react-redux'; // , useSelector
+import { cityAdd } from '../../../../reducer/city2Slice';
 
 import Input from './Input/Input';
 import Tooltip from './tooltip';
 
+let obj2;
+
 const InputsDirection2 = (props) => {
+  const dispatch = useDispatch();
+  
   const [showTooltip, setShowTooltip] = useState(false);
+
   const setInputWhere__value = props.setInputWhere;
   const cities = props.cities;
 
@@ -25,17 +32,27 @@ const InputsDirection2 = (props) => {
   useEffect(() => {
   }, [showTooltip]);
 
+  useEffect(() => {
+    if (obj2) {
+      dispatch(cityAdd(obj2));
+    }
+  }, [obj2]);
+
   const onClickA = (e) => {
-    console.log(e.target);
-
+    const target = e.target;
     const li = e.target.parentElement;
+
+    const nameCity = li.children[0].innerHTML;
     const idCity = li.children[1].innerHTML;
-    const nameCity = e.target.innerHTML;
-
-    const input = e.target.closest('.div-input__direction').children[0];
-
-    input.id = idCity // id подставили id city --- НЕ ЗАБЫТЬ
-    input.value = nameCity;
+    
+    obj2 = {
+      nameCity: nameCity,
+      idCity: idCity,     
+    }; // присваеваем новое значене obj1 и через useEffect Ложим объект в хранилище
+      
+        // Подставляем выбранное значение в инпут
+    const input = target.closest('.div-input__direction').children[0];
+    input.value = nameCity;    // console.log(input);
   };
 
   return (

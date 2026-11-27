@@ -1,11 +1,11 @@
-import {  useDispatch, useSelector } from 'react-redux'; // 
+import {  useDispatch } from 'react-redux'; // , useSelector
 import { citiesReset } from '../../../../../reducer/citiesSlice';
 
 function Input(props) {  // console.log(props);
 
   const dispatch = useDispatch();
 
-  const { cities } = useSelector((state) => state.cities);
+  // const { cities } = useSelector((state) => state.cities);
   // console.log(cities);
 
   const funct = props.props.funct.handleChangeWhere;

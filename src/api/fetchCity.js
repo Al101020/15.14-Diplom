@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const fetchCity = createAsyncThunk(
+const FetchCity = createAsyncThunk(
   'citiesSearch/fetchCity', // 'citiesSearch'
   async (part, thunkAPI) => {
     try {
@@ -27,4 +27,4 @@ const fetchCity = createAsyncThunk(
   }
 );
 
-export default fetchCity;
+export default FetchCity;

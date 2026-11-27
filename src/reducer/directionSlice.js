@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import fetchCity from '../api/fetchCity';
-import fetchDirection from '../api/fetchDirection';
+// import fetchCity from '../api/fetchCity';
+import FetchCity from '../api/FetchCity';
+// import fetchDirection from '../api/fetchDirection';
+import FetchDirection from '../api/FetchDirection';
 
 const initialState = {
   direction: [],
@@ -26,13 +28,13 @@ const directionSlice = createSlice({
   extraReducers: (builder) => {
     builder
       // Обработка начала загрузки (pending)
-      .addCase(fetchDirection.pending, (state) => {        // console.log('Обработка начала загрузки (pending)');
+      .addCase(FetchDirection.pending, (state) => {        // console.log('Обработка начала загрузки (pending)');
         state.isLoading = true;
         state.isError = false; // Сбрасываем флаг ошибки при новом запросе
         state.error = '';
       })
       // Обработка успешной загрузки (fulfilled)
-      .addCase(fetchDirection.fulfilled, (state, action) => {        // console.log('Обработка успешной загрузки (fulfilled)');
+      .addCase(FetchDirection.fulfilled, (state, action) => {        // console.log('Обработка успешной загрузки (fulfilled)');
         state.isLoading = false;
         state.isError = false;
         if (action.payload === undefined) {
@@ -41,7 +43,7 @@ const directionSlice = createSlice({
         state.direction = action.payload;
       })
       // Обработка ошибки (rejected)
-      .addCase(fetchDirection.rejected, (state, action) => {
+      .addCase(FetchDirection.rejected, (state, action) => {
         console.log('Обработка ошибки (rejected)');
         state.isLoading = false;
         state.isError = true;

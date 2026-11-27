@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // console.log('fetchDirection');
 
-const fetchDirection = createAsyncThunk(
+const FetchDirection = createAsyncThunk(
   'directionSearch/fetchDirection',
   async (objDirection, thunkAPI) => {
     
@@ -17,13 +17,22 @@ const fetchDirection = createAsyncThunk(
 
       let url;
 
-      if (idCityFrom && idCityTo) {
-        url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}`
+      if (idCityFrom && idCityTo && DateFrom && DateTo) {
+        url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}&date_start=${objDirection.DateFrom}&date_end=${objDirection.DateTo}`;
       } else if (idCityFrom && idCityTo && DateFrom) {
         url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}&date_start=${objDirection.DateFrom}`;
-      } else if (idCityFrom && idCityTo && DateFrom && DateTo) {
-        url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}&date_start=${objDirection.DateFrom}&date_end=${objDirection.DateTo}`
+      } else if (idCityFrom && idCityTo) {
+        url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}`;
       }
+
+
+      // if (idCityFrom && idCityTo) {
+      //   url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}`
+      // } else if (idCityFrom && idCityTo && DateFrom) {
+      //   url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}&date_start=${objDirection.DateFrom}`;
+      // } else if (idCityFrom && idCityTo && DateFrom && DateTo) {
+      //   url = `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${objDirection.idCityFrom}&to_city_id=${objDirection.idCityTo}&date_start=${objDirection.DateFrom}&date_end=${objDirection.DateTo}`
+      // }
       
 
       const response = 
@@ -47,4 +56,4 @@ const fetchDirection = createAsyncThunk(
   }
 );
 
-export default fetchDirection;
+export default FetchDirection;
